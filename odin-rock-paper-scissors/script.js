@@ -32,41 +32,55 @@ function playGame(playerSelection, computerSelection){
     playerSelection = firstLetter1 + remainingLetters1;
     computerSelection = firstLetter2 + remainingLetters2;
     
-    console.log("You choose: " + playerSelection)
-    console.log("Computer choose: " + computerSelection)
+
+    //if playerChoice and computerChoice exists, delete them 
+
+    const results = document.querySelector('#results');
+    //console.log("You choose: " + playerSelection)
+    
+    const playerChoice = document.createElement('div');
+    playerChoice.textContent = "You choose: " + playerSelection;
+    results.append(playerChoice);
     
 
+    //console.log("Computer choose: " + computerSelection)
+    const computerChoice = document.createElement('div');
+    computerChoice.textContent = "Computer choose: " + computerSelection;
+    results.append(computerChoice);
+
+    // Result
+    const finalResult = document.createElement('div');
 
     if (playerSelection == "Rock" && computerSelection == "Scissors"){
-        console.log("You Win! "+ playerSelection + " beats " + computerSelection);
+        finalResult.textContent = "You Win! "+ playerSelection + " beats " + computerSelection;
         /*return 1;*/
     }
     else if (playerSelection == "Paper" && computerSelection == "Rock"){
-        console.log("You Win! "+ playerSelection + " beats " + computerSelection);
+        finalResult.textContent = "You Win! "+ playerSelection + " beats " + computerSelection;
         /*return 1;*/
     }
     else if (playerSelection == "Scissors" && computerSelection == "Paper"){
-        console.log("You Win! "+ playerSelection + " beats " + computerSelection);
+        finalResult.textContent = "You Win! "+ playerSelection + " beats " + computerSelection;
         /*return 1;*/
     }
     else if (playerSelection == "Paper" && computerSelection == "Scissors"){
-        console.log("You Lose! "+ computerSelection + " beats " + playerSelection);
+        finalResult.textContent = "You Lose! "+ computerSelection + " beats " + playerSelection;
         /*return 0;*/
     }
     else if (playerSelection == "Rock" && computerSelection == "Paper"){
-        console.log("You Lose! "+ computerSelection + " beats " + playerSelection);
+        finalResult.textContent = "You Lose! "+ computerSelection + " beats " + playerSelection;
         /*return 0;*/
     }
     else if (playerSelection == "Scissors" && computerSelection == "Rock"){
-        console.log("You Lose! "+ computerSelection.charAt(0) + " beats " + playerSelection.charAt(0));
+        finalResult.textContent = "You Lose! "+ computerSelection + " beats " + playerSelection;
         /*return 0;*/
     }
     else {
-        console.log("Draw!")
+        finalResult.textContent = "Draw!";
         /*return -1;*/
     }
     /*return -1;*/
-
+    results.append(finalResult)
 }
 
 const btns = document.querySelectorAll('#btn');
