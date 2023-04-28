@@ -120,12 +120,11 @@ function playGame(playerSelection, computerSelection){
         const finalScore = document.createElement('div');
         finalScore.setAttribute('id','finalScore');
         if (player_score > computer_score)
-            finalScore.textContent = "Player Wins"
+            finalScore.textContent = "Player Wins - P:" + player_score + ' C:'+ computer_score;
         else if(computer_score > player_score)
-            finalScore.textContent = "Computer Wins"
+            finalScore.textContent = "Computer Wins - P:" + player_score + ' C:'+ computer_score;
         else
-            finalScore.textContent = "Draw!"
-        
+            finalScore.textContent = "Draw! - P:" + player_score + ' C:'+ computer_score;
         
         results.append(finalScore)
         player_score = 0;
