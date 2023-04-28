@@ -31,7 +31,14 @@ function resetScore(){
     const ifFinalResult = document.querySelector('#finalResult');
     if (ifFinalResult != null)
         results.removeChild(ifFinalResult)
+    const ifFinalScore = document.querySelector('#finalScore');
+    if (ifFinalScore != null)
+        results.removeChild(ifFinalScore)
 }
+
+total_score = 0
+player_score = 0
+computer_score = 0
 
 function playGame(playerSelection, computerSelection){
     // Uppercase First Letter
@@ -72,26 +79,32 @@ function playGame(playerSelection, computerSelection){
 
     if (playerSelection == "Rock" && computerSelection == "Scissors"){
         finalResult.textContent = "You Win! "+ playerSelection + " beats " + computerSelection;
+        player_score++;
         /*return 1;*/
     }
     else if (playerSelection == "Paper" && computerSelection == "Rock"){
         finalResult.textContent = "You Win! "+ playerSelection + " beats " + computerSelection;
+        player_score++;
         /*return 1;*/
     }
     else if (playerSelection == "Scissors" && computerSelection == "Paper"){
         finalResult.textContent = "You Win! "+ playerSelection + " beats " + computerSelection;
+        player_score++;
         /*return 1;*/
     }
     else if (playerSelection == "Paper" && computerSelection == "Scissors"){
         finalResult.textContent = "You Lose! "+ computerSelection + " beats " + playerSelection;
+        computer_score++;
         /*return 0;*/
     }
     else if (playerSelection == "Rock" && computerSelection == "Paper"){
         finalResult.textContent = "You Lose! "+ computerSelection + " beats " + playerSelection;
+        computer_score++;
         /*return 0;*/
     }
     else if (playerSelection == "Scissors" && computerSelection == "Rock"){
         finalResult.textContent = "You Lose! "+ computerSelection + " beats " + playerSelection;
+        computer_score++;
         /*return 0;*/
     }
     else {
@@ -100,6 +113,24 @@ function playGame(playerSelection, computerSelection){
     }
     /*return -1;*/
     results.append(finalResult)
+    total_score++;
+
+    if (total_score == 5){
+        total_score = 0;
+        const finalScore = document.createElement('div');
+        finalScore.setAttribute('id','finalScore');
+        if (player_score > computer_score)
+            finalScore.textContent = "Player Wins"
+        else if(computer_score > player_score)
+            finalScore.textContent = "Computer Wins"
+        else
+            finalScore.textContent = "Draw!"
+        
+        
+        results.append(finalScore)
+        player_score = 0;
+        computer_score = 0;
+    }
 }
 
 const btns = document.querySelectorAll('#btn');
