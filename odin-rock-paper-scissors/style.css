@@ -7,13 +7,21 @@ body{
 .container{
     width:100%;
     display:flex;
-    justify-content: right;
+    flex-direction: column;
     align-items: center;
+}
+
+.container-item1{
+    flex:auto;
+}
+
+.container-item2{
+    flex:auto;
 }
 
 .item{
     display:inline;
-    width:300px;
+    width:250px;
     height:100px;
     margin-top: 5%;
     flex: auto;
@@ -24,7 +32,7 @@ body{
     background-color:rgb(37, 37, 223);
     color:white;
     border-radius:10px;
-    font-size:3em;
+    font-size:2em;
 }
 
 .button1:hover{
@@ -36,7 +44,7 @@ body{
     background-color:rgb(214, 7, 7);
     color:white;
     border-radius:10px;
-    font-size:3em;
+    font-size:2em;
 }
 
 .button2:hover{
@@ -49,11 +57,24 @@ body{
     background-color:rgb(20, 214, 46);
     color:white;
     border-radius:10px;
-    font-size:3em;
+    font-size:2em;
 }
 
 .button3:hover{
     transition: all .4s ease;
     background-color:rgb(197, 233, 202);
     color:rgb(20, 214, 46);
+}
+
+.button4{
+    background-color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    border-radius:10px;
+    font-size:2em;
+}
+
+.button4:hover{
+    transition: all .4s ease;
+    background-color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
 }

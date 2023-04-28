@@ -36,6 +36,13 @@ function resetScore(){
         results.removeChild(ifFinalScore)
 }
 
+function resetButton(){
+    resetScore();
+    total_score = 0
+    player_score = 0
+    computer_score = 0
+}
+
 total_score = 0
 player_score = 0
 computer_score = 0
@@ -52,15 +59,13 @@ function playGame(playerSelection, computerSelection){
     computerSelection = firstLetter2 + remainingLetters2;
     
 
-    
-
     const results = document.querySelector('#results');
-    //console.log("You choose: " + playerSelection)
+    
 
     //if playerChoice, computerChoice and finalResult exists, delete them (RESET SCORE)
     resetScore()
 
-    
+    //console.log("You choose: " + playerSelection)
     const playerChoice = document.createElement('div');
     playerChoice.setAttribute('id','playerChoice')
     playerChoice.textContent = "You choose: " + playerSelection;
@@ -139,3 +144,9 @@ btns.forEach((btn) => {
         playGame(btn.textContent.toLowerCase(), getComputerChoice());
     });
 });
+
+const btn_reset = document.querySelector('#btn-reset')
+btn_reset.addEventListener('dblclick',() => {resetButton();})
+
+
+resetButton()
