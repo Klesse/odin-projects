@@ -21,6 +21,18 @@ function getPlayerChoice(){
     return result;
 }
 
+function resetScore(){
+    const ifPlayerChoice = document.querySelector('#playerChoice');
+    if (ifPlayerChoice != null)
+        results.removeChild(ifPlayerChoice)
+    const ifComputerChoice = document.querySelector('#computerChoice');
+    if (ifComputerChoice != null)
+        results.removeChild(ifComputerChoice)
+    const ifFinalResult = document.querySelector('#finalResult');
+    if (ifFinalResult != null)
+        results.removeChild(ifFinalResult)
+}
+
 function playGame(playerSelection, computerSelection){
     // Uppercase First Letter
     let firstLetter1 = playerSelection.charAt(0);
@@ -33,23 +45,30 @@ function playGame(playerSelection, computerSelection){
     computerSelection = firstLetter2 + remainingLetters2;
     
 
-    //if playerChoice and computerChoice exists, delete them 
+    
 
     const results = document.querySelector('#results');
     //console.log("You choose: " + playerSelection)
+
+    //if playerChoice, computerChoice and finalResult exists, delete them (RESET SCORE)
+    resetScore()
+
     
     const playerChoice = document.createElement('div');
+    playerChoice.setAttribute('id','playerChoice')
     playerChoice.textContent = "You choose: " + playerSelection;
     results.append(playerChoice);
     
 
     //console.log("Computer choose: " + computerSelection)
     const computerChoice = document.createElement('div');
+    computerChoice.setAttribute('id','computerChoice')
     computerChoice.textContent = "Computer choose: " + computerSelection;
     results.append(computerChoice);
 
     // Result
     const finalResult = document.createElement('div');
+    finalResult.setAttribute('id','finalResult')
 
     if (playerSelection == "Rock" && computerSelection == "Scissors"){
         finalResult.textContent = "You Win! "+ playerSelection + " beats " + computerSelection;
