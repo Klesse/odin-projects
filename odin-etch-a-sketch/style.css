@@ -1,0 +1,27 @@
+.container-vertically{
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    width:640px;
+    flex-direction:column;
+    align-items:center;
+    border:2px black solid;
+}
+
+.container-horizontally{
+    display:flex;
+    justify-content:center;
+}
+
+.item{
+    width:40px;
+    height:40px;
+    flex:auto;
+}
+
+.buttons{
+    display:flex;
+    justify-content: center;
+    margin-left:auto;
+    margin-right:auto;
+}
