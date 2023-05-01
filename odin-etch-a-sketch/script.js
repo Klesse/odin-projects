@@ -38,9 +38,9 @@ function generateGame(){
 
 generateGame()
 const buttonBlack = document.querySelector('#paint-black');
-buttonBlack.addEventListener('click',()=>{paintBlack();});
+buttonBlack.addEventListener('click',paintBlack);
 const buttonWhite = document.querySelector('#paint-white');
-buttonWhite.addEventListener('click',()=>{paintWhite();});
+buttonWhite.addEventListener('click',paintWhite);
 
 
 console.log('oi')
