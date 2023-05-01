@@ -19,6 +19,13 @@
     flex:auto;
 }
 
+/*
+.item:hover{
+    background-color:black;
+    transition: all .4s ease;
+}
+*/
+
 .buttons{
     display:flex;
     justify-content: center;

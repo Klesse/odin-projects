@@ -4,6 +4,7 @@ function paintBlack(){
     items.forEach((item) => {
         item.addEventListener('mousedown',()=>{
             item.style.backgroundColor='black';
+            
         });
     });
 }
@@ -16,6 +17,14 @@ function paintWhite(){
             item.style.backgroundColor='white';
         });
     });
+}
+
+function clear(){
+    const items = document.querySelectorAll("#item");
+
+    items.forEach((item) => {
+            item.style.backgroundColor='white';
+        });
 }
 
 
@@ -37,10 +46,15 @@ function generateGame(){
 }
 
 generateGame()
+
 const buttonBlack = document.querySelector('#paint-black');
 buttonBlack.addEventListener('click',paintBlack);
+
 const buttonWhite = document.querySelector('#paint-white');
 buttonWhite.addEventListener('click',paintWhite);
+
+const buttonClear = document.querySelector('#clear');
+buttonClear.addEventListener('click',clear);
 
 
 console.log('oi')
