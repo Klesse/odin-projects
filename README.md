@@ -9,7 +9,7 @@ so the approach of the program is to read and understand the concepts and some c
 
 # Projects
 
-* **Calculator**: calculator done with javascript. ❌
+* **Calculator**: calculator done with javascript. ✅
 * **Etch-a-sketch**: basic painting app. ✅
 * **Landing-page**: clone of a landing page, but the content was free choice. ✅
 * **Recipes**: landing page with cookiing recipes. ✅
@@ -20,7 +20,6 @@ so the approach of the program is to read and understand the concepts and some c
 * ❌ First version undone.
 
 # TODOs
-* Finish calculator.
 * Improve etch-a-sketch with new features.
 * CSS to recipes.
 * Improve rock paper and scissors design.
